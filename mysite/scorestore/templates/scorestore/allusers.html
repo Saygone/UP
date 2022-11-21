@@ -1,0 +1,18 @@
+{% extends 'scorestore/base.html' %}
+
+{% block content %}
+<h1>{{title}}</h1>
+
+<ul>
+    {% for u in users %}
+        <h1>Имя пользователя: {{u.username}}</h1>
+        <h1>Электронная почта: {{u.email}}</h1>
+        <h2>Имя: {{u.first_name}}</h2><h2>Фамилия: {{u.last_name}}</h2>
+        <h2>Очки: {{u.userprofile.points}}</h2>
+        <div class="clear"></div>
+            <!--<a href="#" class="btn btn-warning">Изменить</a>
+            <a href="#" class="btn btn-danger">Удалить</a>-->
+        <hr>
+    {% endfor %}
+</ul>
+{% endblock %}

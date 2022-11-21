@@ -1,0 +1,19 @@
+{% extends 'scorestore/base.html' %}
+
+{% block content %}
+<h1>{{title}}</h1>
+
+
+    {% for p in posts %}
+    {% if p.photo %}
+        <p><img class = "img-article-left thumb" src="{{p.photo.url}}"></p>
+    {% endif %}
+        <h2>{{p.name}}</h2>
+        <h2>{{p.description}}</h2>
+        <p>Цена: {{p.price}}</p>
+        <div class="clear"></div>
+        <a href="{{ p.get_absolute_url }}" class="btn btn-warning">Купить</a><p>У вас очков: {{user.userprofile.points}}</p>
+        <!--<p class="link-buy-item"><a href="#">Купить</a></p><p>У вас очков: {{user.userprofile.points}}</p>-->
+        <hr>
+    {% endfor %}
+{% endblock %}

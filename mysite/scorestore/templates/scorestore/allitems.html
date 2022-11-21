@@ -1,0 +1,21 @@
+{% extends 'scorestore/base.html' %}
+
+{% block content %}
+<h1>{{title}}</h1>
+
+<ul>
+    {% for p in posts %}
+    <li>
+    {% if p.photo %}
+        <p><img class = "img-article-left thumb" src="{{p.photo.url}}"></p>
+    {% endif %}
+        <h2>{{p.name}}</h2>
+        <p>Цена: {{p.price}} Осталось: {{p.count}}</p>
+        <div class="clear"></div>
+            <a href="#" class="btn btn-warning">Изменить</a>
+            <a href="#" class="btn btn-danger">Удалить</a>
+        <hr>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

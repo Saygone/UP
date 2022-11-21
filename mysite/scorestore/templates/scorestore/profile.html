@@ -1,0 +1,11 @@
+{% extends 'scorestore/base.html' %}
+
+{% block content %}
+<h1>{{title}}</h1>
+<h2>Ваше пользовательское имя: {{user.username}}</h2>
+{% if user.is_authenticated %}
+<h3>Ваш email {{user.email}}</h3>
+<h3>Ваш tgid {{user.userprofile.telegramID}}</h3>
+<h3>Ваше количество очков {{user.userprofile.points}}</h3>
+{% endif %}
+{% endblock %}

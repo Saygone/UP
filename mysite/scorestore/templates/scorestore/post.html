@@ -1,0 +1,19 @@
+{% extends 'scorestore/base.html' %}
+
+{% block content %}
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+<h1>Наименование: {{post.name}}</h1>
+<h1>Цена: {{post.price}}</h1>
+
+{% if post.photo %}
+<p><img class="img-article-left" src="{{post.photo.url}}"</p>
+{% endif %}
+
+<h3>Ваше количество очков {{user.userprofile.points}}</h3>
+{% endblock %}
