@@ -32,7 +32,7 @@ class ExtendedUserCreationForm(UserCreationForm):
 class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
-        fields = 'telegramID'
+        fields = ('telegramID',)
 
 # Форма для авторизации
 class LoginForm(forms.Form):
